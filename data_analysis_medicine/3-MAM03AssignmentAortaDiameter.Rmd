@@ -1,0 +1,185 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Library imports
+```{r}
+library(haven)
+library(table1) 
+library(nlme)
+library(scales)
+library(pracma)
+library(lme4)
+library(merTools)
+```
+
+Data analysis
+```{r}
+marfan <- read.csv("marfan.csv")
+```
+
+```{r}
+marfan_male <- marfan[marfan$sexe == 1,]
+marfan_female <- marfan[marfan$sexe == 0,]
+
+plot(marfan_male$age[order(marfan_male$age)], 
+     marfan_male$diameter[order(marfan_male$age)], col = 'blue', type='p',
+     xlab='age', ylab='diameter')
+points(marfan_female$age[order(marfan_female$age)],
+       marfan_female$diameter[order(marfan_female$age)], col = 'red')
+
+legend("topleft", legend=c("Male", "Female 2"),
+       col=c("blue", "red"), lty = 1:2, cex=0.8)
+
+```
+
+Check assumptions
+```{r}
+# Repeated measurements
+model1 = lme(diameter~age+sexe, random= (~1| patnr), data=marfan, method="REML")
+summary(model1)
+
+# check assumptions
+par(mfrow=c(2,2))
+plot(marfan$age, resid(model1))
+abline(h=0, lty=2)
+lines(unique(round(marfan$age))[order(unique(round(marfan$age)))], tapply(resid(model1), round(marfan$age), mean)[order(unique(round(marfan$age)))], col=2,lwd=3)
+for(i in unique(marfan$patnr)){
+  lines(marfan$metingnr[marfan$patnr == i], resid(model1)[marfan$patnr == i], lty=2)
+}
+qqnorm(resid(model1))
+qqline(resid(model1))
+hist(model1$coefficients$random$patnr,xlab="patient specific intercept",main="")
+qqnorm(model1$coefficients$random$patnr)
+qqline(model1$coefficients$random$patnr)
+
+
+# Random slope
+model2 = lme(diameter~age+sexe, random = (~0+age+sexe|patnr), data=marfan, method="REML")
+summary(model2)
+
+# check the assumptions
+par(mfrow=c(2,3))
+plot(marfan$age, resid(model2))
+abline(h=0, lty=2)
+lines(unique(round(marfan$age))[order(unique(round(marfan$age)))], tapply(resid(model2), round(marfan$age), mean)[order(unique(round(marfan$age)))], col=2,lwd=3)
+for(i in unique(marfan$patnr)){
+  lines(marfan$metingnr[marfan$patnr == i], resid(model2)[marfan$patnr == i], lty=2)
+}
+qqnorm(resid(model2))
+qqline(resid(model2))
+hist(model2$coefficients$random$patnr[,1],xlab="patient specific intercept",main="")
+qqnorm(model2$coefficients$random$patnr[,1])
+qqline(model2$coefficients$random$patnr[,1])
+
+# Random intercept and slope
+model3 = lme(diameter~age+sexe , random = (~1+age+sexe|patnr), data=marfan, method="REML")
+summary(model3)
+
+# check assumptions
+par(mfrow=c(2,3))
+plot(marfan$age, resid(model3))
+abline(h=0, lty=2)
+lines(unique(round(marfan$age))[order(unique(round(marfan$age)))], tapply(resid(model3), round(marfan$age), mean)[order(unique(round(marfan$age)))], col=2,lwd=3)
+for(i in unique(marfan$patnr)){
+  lines(marfan$metingnr[marfan$patnr == i], resid(model1)[marfan$patnr == i], lty=2)
+}
+qqnorm(resid(model3))
+qqline(resid(model3))
+hist(model3$coefficients$random$patnr[,1],xlab="patient specific intercept",main="")
+qqnorm(model3$coefficients$random$patnr[,1])
+qqline(model3$coefficients$random$patnr[,1])
+hist(model3$coefficients$random$patnr[,2],xlab="patient specific slope",main="")
+qqnorm(model3$coefficients$random$patnr[,2])
+qqline(model3$coefficients$random$patnr[,2])
+```
+
+Compare models
+```{r}
+# Comparing models
+
+# first set to ML
+model1_ML = lme(diameter~age+sexe, random=~1|patnr, data=marfan, method="ML")
+model2_ML = lme(diameter~age+sexe, random=~0+age+sexe|patnr, data=marfan, method="ML")
+model3_ML = lme(diameter~age+sexe, random=~1+age+sexe|patnr, data=marfan, method="ML")
+
+anova(model1_ML, model2_ML, model3_ML)
+```
+
+```{r}
+# null hypothesis: there is no effect in diameter over time (meetingnr)
+model3a = lme(diameter~age+sexe, random = (~1+age+sexe|patnr), data=marfan, method="ML")
+model3b = lme(diameter~1, random = (~1+age+sexe|patnr), data=marfan, method="ML")
+anova(model3a, model3b)
+# null hypothesis rejected
+```
+
+Expected values for new patients
+```{r}
+#Make a figure showing the expected values (and confidence bands) of the aorta diameter for new male and female patients with age varying between 20 and 40 years.
+
+#newdata <- data.frame(patnr = 1037:(1037+19), metingnr = round(runif(20, min=0, max=15)), age = round(runif(20, min=20, max=40)), sexe = round(runif(20, min=0, max=1)))
+# newdata <- data.frame(patnr = 1037:(1037+19), age = round(runif(20, min=20, max=40)), sexe = round(runif(20, min=0, max=1)))
+
+newdata_male <- data.frame(age = 21:40, sexe = round(runif(20, min=1, max=1)))
+
+newdata_female <- data.frame(age = 21:40, sexe = round(runif(20, min=0, max=0)))
+
+designmatix_male <- model.matrix(~age+sexe, newdata_male)
+predvar_male <- diag(designmatix_male %*% vcov(model3) %*% t(designmatix_male))
+newdata_male$SE <- sqrt(predvar_male)
+newdata_male$mean <- predict(model3, newdata = newdata_male,
+                        level = 0)
+
+designmatix_female <- model.matrix(~age+sexe, newdata_female)
+predvar_female <- diag(designmatix_female %*% vcov(model3) %*% t(designmatix_female))
+newdata_female$SE <- sqrt(predvar_female)
+newdata_female$mean <- predict(model3, newdata = newdata_female,
+                        level = 0)
+
+plot(20:39, newdata_male$mean, xlab="age", ylab="diameter", type="l", col="red", ylim=c(25, 55))
+lines(20:39, newdata_male$mean +1.96*newdata_male$SE, lty = 2, col="red")
+lines(20:39, newdata_male$mean -1.96*newdata_male$SE, lty = 2, col="red")
+for(i in 1:length((marfan$patnr))){
+  subject_id = (marfan$patnr)[i]
+  lines(marfan$age[marfan$patnr == subject_id],
+        marfan$diameter[marfan$patnr == subject_id],
+        col=alpha(i, 0.05))
+}
+
+plot(20:39, newdata_female$mean, xlab="age", ylab="diameter", type="l", col="red", ylim=c(25, 55))
+lines(20:39, newdata_female$mean +1.96*newdata_female$SE, lty = 2, col="red")
+lines(20:39, newdata_female$mean -1.96*newdata_female$SE, lty = 2, col="red")
+for(i in 1:length((marfan$patnr))){
+  subject_id = (marfan$patnr)[i]
+  lines(marfan$age[marfan$patnr == subject_id],
+        marfan$diameter[marfan$patnr == subject_id],
+        col=alpha(i, 0.05))
+}
+```
+
+Predictions for new times
+```{r}
+par(mfrow=c(2,2))
+for (subject_id in unique(marfan$patnr)){
+  min_age <- min(marfan$age[marfan$patnr == subject_id])
+  max_age <- max(marfan$age[marfan$patnr == subject_id])
+  min_diameter <- min(marfan$diameter[marfan$patnr == subject_id])
+  max_diameter <- max(marfan$diameter[marfan$patnr == subject_id])
+  plot(marfan$age[marfan$patnr == subject_id], 
+       marfan$diameter[marfan$patnr == subject_id],
+       xlab="Age", ylab="Diameter", type="n", col="red",
+       ylim=c(min_diameter-5, max_diameter+5), xlim=c(min_age-1, max_age+2),
+       main = paste("Subject: ", subject_id))
+  lines(marfan$age[marfan$patnr == subject_id], 
+        marfan$diameter[marfan$patnr == subject_id],
+        col=alpha(i, 1))
+  lines(newdata_current$age[newdata_current$patnr == subject_id],
+        ci_prediction[newdata_current$patnr == subject_id,1], lty = 1, col = i)
+  lines(newdata_current$age[newdata_current$patnr == subject_id],
+        ci_prediction[newdata_current$patnr == subject_id,2], lty = 2, col= i)
+  lines(newdata_current$age[newdata_current$patnr == subject_id],
+        ci_prediction[newdata_current$patnr == subject_id,3], lty = 2, col= i)
+}
+```

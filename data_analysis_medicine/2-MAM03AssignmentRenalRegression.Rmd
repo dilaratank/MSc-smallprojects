@@ -1,0 +1,165 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Library imports
+```{r}
+library(haven)
+library(survival)
+library(survminer)
+library(splines)
+library(dplyr)
+library(tidyr)
+library(table1) 
+library(foreign)
+
+d <- read.spss("renaltx.sav", to.data.frame=TRUE)
+db <- d
+```
+
+Data analysis 
+```{r}
+d$gstatus <- as.factor(d$gstatus) 
+d$dgf <- as.factor(d$dgf) 
+baseline <- table1(~ acclft +aantalre+dgf +creat+predias+prac+uprotein+cregsh| gstatus, data=d, overall="Total")
+View(baseline)
+```
+
+Checking data assumptions
+```{r}
+cox_acclft <- (coxph(Surv(gsurv,gstatus) ~ acclft, data=db))
+plot(predict(cox_acclft), residuals(cox_acclft, type="martingale"))
+abline(h=0)
+lines(smooth.spline(predict(cox_acclft), residuals(cox_acclft, type="martingale")), col="red")
+
+cox_creat <- (coxph(Surv(gsurv,gstatus) ~ creat, data=db))
+plot(predict(cox_creat), residuals(cox_creat))
+abline(h=0)
+lines(smooth.spline(predict(cox_creat), residuals(cox_creat, type="martingale")), col="red")
+
+cox_predias <- (coxph(Surv(gsurv,gstatus) ~ predias, data=db))
+plot(predict(cox_predias), residuals(cox_predias, type="martingale"))
+abline(h=0)
+lines(smooth.spline(predict(cox_predias), residuals(cox_predias, type="martingale")), col="red")
+
+cox_prac <- (coxph(Surv(gsurv,gstatus) ~ prac, data=db))
+plot(predict(cox_prac), residuals(cox_prac, type="martingale"))
+abline(h=0)
+lines(smooth.spline(predict(cox_prac), residuals(cox_prac, type="martingale")), col="red")
+
+cox_cregsh <- (coxph(Surv(gsurv,gstatus) ~ cregsh, data=db))
+plot(predict(cox_cregsh), residuals(cox_cregsh, type="martingale"))
+abline(h=0)
+lines(smooth.spline(predict(cox_cregsh), residuals(cox_cregsh, type="martingale")), col="red")
+```
+
+```{r}
+cox <- (coxph(Surv(gsurv,gstatus) ~ acclft+log(creat)+predias+prac+cregsh, data=db))
+plot(predict(cox), residuals(cox, type="martingale"))
+abline(h=0)
+lines(smooth.spline(predict(cox), residuals(cox, type="martingale")), col="red")
+```
+
+```{r}
+cox <- (coxph(Surv(gsurv,gstatus) ~ as.factor(aantalre), data=db))
+cox.zph(cox)
+
+cox <- (coxph(Surv(gsurv,gstatus) ~ as.factor(uprotein), data=db))
+cox.zph(cox)
+
+cox <- (coxph(Surv(gsurv,gstatus) ~ acclft, data=db))
+cox.zph(cox)
+plot <- ggcoxfunctional(cox, Surv(gsurv, gstatus), data = db)
+plot 
+cox_spline <- coxph(Surv(gsurv, gstatus) ~ pspline(acclft), data = db)
+cox_spline
+
+cox <- (coxph(Surv(gsurv,gstatus) ~ creat, data=db))
+cox.zph(cox)
+plot <- ggcoxfunctional(cox, Surv(gsurv, gstatus), data = db)
+plot 
+cox_spline <- coxph(Surv(gsurv, gstatus) ~ pspline(creat), data = db)
+cox_spline
+
+cox <- (coxph(Surv(gsurv,gstatus) ~ predias, data=db))
+plot <- ggcoxfunctional(cox, Surv(gsurv, gstatus), data = db)
+plot 
+cox_spline <- coxph(Surv(gsurv, gstatus) ~ pspline(predias), data = db)
+cox_spline
+
+cox <- (coxph(Surv(gsurv,gstatus) ~ prac, data=db))
+plot <- ggcoxfunctional(cox, Surv(gsurv, gstatus), data = db)
+plot 
+cox_spline <- coxph(Surv(gsurv, gstatus) ~ pspline(prac), data = db)
+cox_spline
+
+cox <- (coxph(Surv(gsurv,gstatus) ~ cregsh, data=db))
+plot <- ggcoxfunctional(cox, Surv(gsurv, gstatus), data = db)
+plot 
+cox_spline <- coxph(Surv(gsurv, gstatus) ~ pspline(cregsh), data = db)
+cox_spline
+
+```
+
+
+```{r}
+covariates <- c("acclft", "creat", "predias", "prac", "cregsh")
+covs <- data.frame(db[, c("acclft", "creat", "predias", "prac")])
+
+library(splines)
+par(mfrow=c(2,2))
+psplinespvals=c()
+for (i in 1:ncol(covs)) {
+   x=qq=NA
+   x=as.numeric(unlist(covs[i]))         # select the covariate of interest
+   if (is.numeric(x) ==TRUE) {
+      aic=c()
+      for (j in 1:12) {aic[j] = AIC(coxph(Surv(gsurv,gstatus) ~ ns(x, df=j), data=db))}
+      plot(aic, type="b", main=names(covs)[i], xlab="natural spline penalty (df)")
+      qq=summary(coxph(Surv(gsurv,gstatus) ~ pspline(x), data=db)) 
+      psplinespvals[i] = qq$coefficients[2,6]
+      text(x=1, y=min(aic,na.rm=T)+(max(aic,na.rm=T)-min(aic,na.rm=T))/2, 
+             paste("pspline nonlin p = ", round(psplinespvals[i],4)), adj=0, col=4, cex=0.9)
+   }
+}
+
+```
+```{r}
+aic=c()
+for (j in 1:12) 
+{
+  aic[j] = AIC(coxph(Surv(gsurv,gstatus) ~ ns(creat, df=j), data=db))
+}
+plot(aic, type="b", main="creat", xlab="natural spline penalty (df)")
+qq=summary(coxph(Surv(gsurv,gstatus) ~ pspline(creat), data=db)) 
+psplinespvals[i] = qq$coefficients[2,6]
+text(x=1, y=min(aic,na.rm=T)+(max(aic,na.rm=T)-min(aic,na.rm=T))/2, 
+       paste("pspline nonlin p = ", round(psplinespvals[i],4)), adj=0, col=4, cex=0.9)
+```
+```{r}
+plot(db$creat, predict(coxph(Surv(gsurv, gstatus)~ns(creat, df=2), data=db)))
+```
+
+```{r}
+spline_cox_creat <- (coxph(Surv(gsurv,gstatus) ~ ns(creat, df=2), data=db))
+plot(predict(spline_cox_creat), residuals(spline_cox_creat))
+abline(h=0)
+lines(smooth.spline(predict(spline_cox_creat), residuals(spline_cox_creat, type="martingale")), col="red")
+```
+
+Cox regression analysis
+```{r}
+cox_multi <- (coxph(Surv(gsurv,gstatus) ~ acclft+dgf+as.factor(aantalre)+ns(creat, df=2)+predias+prac+as.factor(uprotein)+cregsh, data=db))
+cox.zph(cox_multi)
+```
+
+Confidence interval
+```{r}
+plot(survfit(cox <- (coxph(Surv(gsurv,gstatus) ~ acclft, data=db))))
+
+plot(survfit(cox <- (coxph(Surv(gsurv,gstatus) ~ dgf, data=db))))
+
+plot(survfit(coxph(Surv(gsurv,gstatus) ~ ns(creat, df=2), data=db)), xlab="Time", ylab="Survival probability")
+plot(survfit(coxph(Surv(gsurv,gstatus) ~ creat, data=db)), xlab="Timens(creat, df=2)", ylab="Survival probability")
+```
