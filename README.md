@@ -9,3 +9,6 @@ A collection of small projects from my Master's Medical Informatics (University 
 
 ### Data analysis medicine
 * Mathematical Statistics: calculate the cost-efficacy ratio of a dataset and its 95% confidence interval, as well as a mathematical proof for the variance.
+* Renal Transplantation (in R): Cox regression analysis to predict graft failure.
+* Aorta Diameter Growth (in R): Mixed-effects regression model showing predictions with new data (new patients and new time points). 
+* Kidney Transplant (in R): Joining a cox regression model and a LME model for predictive value of repeated measures for graft and patient failure. 
