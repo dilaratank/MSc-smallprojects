@@ -12,3 +12,6 @@ A collection of small projects from my Master's Medical Informatics (University 
 * Renal Transplantation (in R): Cox regression analysis to predict graft failure.
 * Aorta Diameter Growth (in R): Mixed-effects regression model showing predictions with new data (new patients and new time points). 
 * Kidney Transplant (in R): Joining a cox regression model and a LME model for predictive value of repeated measures for graft and patient failure. 
+
+### Reasoning with Health Data
+The goal of this project is to get familiar with FAIR's principles about data. In order to do this, we came up with a project that will explore two data sources to make a claim about the correlation between BMI and AFib prevalence worldwide.
