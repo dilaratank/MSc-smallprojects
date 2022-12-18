@@ -1,0 +1,196 @@
+,Country,Standardized Prevalence,Prevalence,iso_code
+24,Angola,341.8,low (<400),AGO
+26,Central African Republic,327.9,low (<400),CAF
+28,Congo,343.6,low (<400),COG
+30,Democratic Republic of the Congo,318.4,low (<400),COD
+32,Equatorial Guinea,347.3,low (<400),GNQ
+34,Gabon,352.8,low (<400),GAB
+38,Burundi,339.4,low (<400),BDI
+40,Comoros,311.9,low (<400),COM
+42,Djibouti,334.6,low (<400),DJI
+44,Eritrea,279.9,low (<400),ERI
+46,Ethiopia,310.6,low (<400),ETH
+48,Kenya,320.0,low (<400),KEN
+50,Madagascar,312.9,low (<400),MDG
+52,Malawi,331.8,low (<400),MWI
+54,Mozambique,327.3,low (<400),MOZ
+56,Rwanda,306.8,low (<400),RWA
+58,Somalia,310.5,low (<400),SOM
+60,South Sudan,320.6,low (<400),SSD
+62,Tanzania,326.2,low (<400),TZA
+64,Uganda,317.8,low (<400),UGA
+66,Zambia,318.8,low (<400),ZMB
+70,Botswana,364.7,low (<400),BWA
+72,Lesotho,353.4,low (<400),LSO
+74,Namibia,347.9,low (<400),NAM
+76,South Africa,376.5,low (<400),ZAF
+78,Swaziland,348.8,low (<400),SWZ
+80,Zimbabwe,345.9,low (<400),ZWE
+84,Benin,338.8,low (<400),BEN
+86,Burkina Faso,352.7,low (<400),BFA
+88,Cameroon,354.7,low (<400),CMR
+90,Cape Verde,370.5,low (<400),CPV
+92,Chad,345.9,low (<400),TCD
+94,Cote d'Ivoire,359.6,low (<400),CIV
+96,The Gambia,361.5,low (<400),GMB
+98,Ghana,364.9,low (<400),GHA
+100,Guinea,338.7,low (<400),GIN
+102,Guinea-Bissau,351.5,low (<400),GNB
+104,Liberia,369.4,low (<400),LBR
+106,Mali,339.7,low (<400),MLI
+108,Mauritania,353.5,low (<400),MRT
+110,Niger,326.8,low (<400),NER
+112,Nigeria,364.0,low (<400),NGA
+114,Sao Tome and Principe,379.3,low (<400),STP
+116,Senegal,350.3,low (<400),SEN
+118,Sierra Leone,381.8,low (<400),SLE
+120,Togo,347.9,low (<400),TGO
+124,Bolivia,513.5,medium (400-600),BOL
+126,Ecuador,538.5,medium (400-600),ECU
+128,Peru,534.2,medium (400-600),PER
+132,Brazil,640.9,high (>600),BRA
+134,Paraguay,694.1,high (>600),PRY
+138,Colombia,530.2,medium (400-600),COL
+140,Costa Rica,532.1,medium (400-600),CRI
+142,El Salvador,511.3,medium (400-600),SLV
+144,Guatemala,492.1,medium (400-600),GTM
+146,Honduras,512.1,medium (400-600),HND
+148,Mexico,687.1,high (>600),MEX
+150,Nicaragua,527.2,medium (400-600),NIC
+152,Panama,518.1,medium (400-600),PAN
+154,Venezuela,555.1,medium (400-600),VEN
+158,Argentina,571.5,medium (400-600),ARG
+160,Chile,574.5,medium (400-600),CHL
+162,Uruguay,556.3,medium (400-600),URY
+166,Antigua and Barbuda,528.2,medium (400-600),ATG
+168,The Bahamas,529.6,medium (400-600),BHS
+170,Barbados,541.6,medium (400-600),BRB
+172,Belize,550.5,medium (400-600),BLZ
+174,Bermuda,565.2,medium (400-600),BMU
+176,Cuba,540.8,medium (400-600),CUB
+178,Dominica,549.9,medium (400-600),DMA
+180,Dominican Republic,546.7,medium (400-600),DOM
+182,Grenada,550.3,medium (400-600),GRD
+184,Guyana,544.7,medium (400-600),GUY
+186,Haiti,519.9,medium (400-600),HTI
+188,Jamaica,543.9,medium (400-600),JAM
+190,Puerto Rico,542.6,medium (400-600),PRI
+192,Saint Lucia,552.1,medium (400-600),LCA
+194,Saint Vincent and the Grenadines,561.8,medium (400-600),VCT
+196,Suriname,542.1,medium (400-600),SUR
+198,Trinidad and Tobago,558.9,medium (400-600),TTO
+200,"Virgin Islands, U.S.",544.3,medium (400-600),VIR
+204,Albania,564.5,medium (400-600),ALB
+206,Bosnia and Herzegovina,595.1,medium (400-600),BIH
+208,Bulgaria,564.6,medium (400-600),BGR
+210,Croatia,483.3,medium (400-600),HRV
+212,Czech Republic,639.3,high (>600),CZE
+214,Hungary,627.8,high (>600),HUN
+216,Macedonia,548.2,medium (400-600),MKD
+218,Montenegro,594.9,medium (400-600),MNE
+220,Poland,698.4,high (>600),POL
+222,Romania,506.1,medium (400-600),ROU
+224,Serbia,473.5,medium (400-600),SRB
+226,Slovakia,668.4,high (>600),SVK
+228,Slovenia,718.2,high (>600),SVN
+232,Belarus,581.8,medium (400-600),BLR
+234,Estonia,606.6,high (>600),EST
+236,Latvia,627.8,high (>600),LVA
+238,Lithuania,610.8,high (>600),LTU
+240,Moldova,567.5,medium (400-600),MDA
+242,Russian Federation,571.5,medium (400-600),RUS
+244,Ukraine,603.7,high (>600),UKR
+248,Afghanistan,303.4,low (<400),AFG
+250,Algeria,311.0,low (<400),DZA
+252,Bahrain,315.3,low (<400),BHR
+254,Egypt,324.4,low (<400),EGY
+256,Iran,337.9,low (<400),IRN
+258,Iraq,341.1,low (<400),IRQ
+260,Jordan,330.2,low (<400),JOR
+262,Kuwait,320.3,low (<400),KWT
+264,Lebanon,333.0,low (<400),LBN
+266,Libya,339.6,low (<400),LBY
+268,Morocco,329.2,low (<400),MAR
+270,Palestine,307.3,low (<400),PSE
+272,Oman,326.2,low (<400),OMN
+274,Qatar,326.9,low (<400),QAT
+276,Saudi Arabia,313.6,low (<400),SAU
+278,Sudan,331.9,low (<400),SDN
+280,Syria,326.9,low (<400),SYR
+282,Tunisia,312.9,low (<400),TUN
+284,Turkey,265.7,low (<400),TUR
+286,United Arab Emirates,318.9,low (<400),ARE
+288,Yemen,305.9,low (<400),YEM
+292,Armenia,558.2,medium (400-600),ARM
+294,Azerbaijan,530.0,medium (400-600),AZE
+296,Georgia,543.2,medium (400-600),GEO
+298,Kazakhstan,532.7,medium (400-600),KAZ
+300,Kyrgyzstan,502.2,medium (400-600),KGZ
+302,Mongolia,524.0,medium (400-600),MNG
+304,Tajikistan,494.8,medium (400-600),TJK
+306,Turkmenistan,525.3,medium (400-600),TKM
+308,Uzbekistan,510.1,medium (400-600),UZB
+312,Bangladesh,394.2,low (<400),BGD
+314,Bhutan,390.1,low (<400),BTN
+316,India,392.0,low (<400),IND
+318,Nepal,421.3,medium (400-600),NPL
+320,Pakistan,405.1,medium (400-600),PAK
+324,Cambodia,373.4,low (<400),KHM
+326,Indonesia,410.8,medium (400-600),IDN
+328,Laos,391.6,low (<400),LAO
+330,Malaysia,402.3,medium (400-600),MYS
+332,Maldives,386.1,low (<400),MDV
+334,Mauritius,383.4,low (<400),MUS
+336,Myanmar,376.2,low (<400),MMR
+338,Philippines,371.0,low (<400),PHL
+340,Sri Lanka,383.7,low (<400),LKA
+342,Seychelles,399.7,low (<400),SYC
+344,Thailand,379.9,low (<400),THA
+346,Timor-Leste,386.4,low (<400),TLS
+348,Vietnam,406.9,medium (400-600),VNM
+352,China,413.6,medium (400-600),CHN
+354,North Korea,372.7,low (<400),PRK
+356,Taiwan (Province of China),374.7,low (<400),TWN
+360,American Samoa,418.7,medium (400-600),ASM
+362,Federated States of Micronesia,378.4,low (<400),FSM
+364,Fiji,388.6,low (<400),FJI
+366,Guam,391.0,low (<400),GUM
+368,Kiribati,375.7,low (<400),KIR
+370,Marshall Islands,374.6,low (<400),MHL
+372,Northern Mariana Islands,385.9,low (<400),MNP
+374,Papua New Guinea,383.5,low (<400),PNG
+376,Samoa,394.7,low (<400),WSM
+378,Solomon Islands,373.1,low (<400),SLB
+380,Tonga,409.2,medium (400-600),TON
+382,Vanuatu,393.6,low (<400),VUT
+386,Brunei,257.2,low (<400),BRN
+388,Japan,230.7,low (<400),JPN
+390,Singapore,278.7,low (<400),SGP
+392,South Korea,264.3,low (<400),KOR
+396,Canada,638.7,high (>600),CAN
+398,Greenland,731.2,high (>600),GRL
+400,United States,899.9,high (>600),USA
+404,Andorra,586.0,medium (400-600),AND
+406,Austria,777.5,high (>600),AUT
+408,Belgium,583.8,medium (400-600),BEL
+410,Cyprus,525.1,medium (400-600),CYP
+412,Denmark,637.4,high (>600),DNK
+414,Finland,700.2,high (>600),FIN
+416,France,576.7,medium (400-600),FRA
+418,Germany,604.7,high (>600),DEU
+420,Greece,541.4,medium (400-600),GRC
+422,Iceland,626.7,high (>600),ISL
+424,Ireland,572.0,medium (400-600),IRL
+426,Israel,536.8,medium (400-600),ISR
+428,Italy,551.6,medium (400-600),ITA
+430,Luxembourg,768.1,high (>600),LUX
+432,Malta,606.3,high (>600),MLT
+434,Netherlands,574.4,medium (400-600),NLD
+436,Norway,700.0,high (>600),NOR
+438,Portugal,405.9,medium (400-600),PRT
+440,Spain,580.8,medium (400-600),ESP
+442,Sweden,806.1,high (>600),SWE
+444,Switzerland,458.8,medium (400-600),CHE
+446,United Kingdom,720.9,high (>600),GBR
+450,Australia,777.9,high (>600),AUS
+452,New Zealand,915.4,high (>600),NZL

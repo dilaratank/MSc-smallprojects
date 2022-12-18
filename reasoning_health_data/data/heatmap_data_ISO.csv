@@ -1,0 +1,201 @@
+,region,ISO,mean_bmi
+401,Afghanistan,AFG,23.46
+402,Albania,ALB,26.84
+403,Algeria,DZA,25.71
+404,American Samoa,ASM,34.11
+405,Andorra,AND,26.88
+406,Angola,AGO,23.41
+407,Antigua and Barbuda,ATG,26.89
+408,Argentina,ARG,27.91
+409,Armenia,ARM,26.47
+410,Australia,AUS,27.3
+411,Austria,AUT,25.71
+412,Azerbaijan,AZE,27.2
+413,Bahamas,BHS,28.17
+414,Bahrain,BHR,24.84
+415,Bangladesh,BGD,21.73
+416,Barbados,BRB,27.96
+417,Belarus,BLR,26.77
+418,Belgium,BEL,26.28
+419,Belize,BLZ,29.19
+420,Benin,BEN,23.62
+421,Bermuda,BMU,28.58
+422,Bhutan,BTN,24.08
+423,Bolivia,BOL,26.67
+424,Bosnia and Herzegovina,BIH,25.94
+425,Botswana,BWA,24.47
+426,Brazil,BRA,26.76
+427,Brunei Darussalam,BRN,27.32
+428,Bulgaria,BGR,26.63
+429,Burkina Faso,BFA,22.2
+430,Burundi,BDI,21.73
+431,Cabo Verde,CPV,24.61
+432,Cambodia,KHM,22.27
+433,Cameroon,CMR,24.44
+434,Canada,CAN,27.11
+435,Central African Republic,CAF,22.93
+436,Chad,TCD,22.01
+437,Chile,CHL,28.17
+438,China,CHN,23.93
+439,China (Hong Kong SAR),HKG,24.29
+440,Colombia,COL,26.37
+441,Comoros,COM,24.56
+442,Congo,COG,23.31
+443,Cook Islands,COK,33.11
+444,Costa Rica,CRI,27.51
+445,Cote d'Ivoire,CIV,23.86
+446,Croatia,HRV,27.62
+447,Cuba,CUB,25.79
+448,Cyprus,CYP,26.98
+449,Czech Republic,CZE,27.31
+450,Denmark,DNK,25.42
+451,Djibouti,DJI,24.13
+452,Dominica,DMA,27.15
+453,Dominican Republic,DOM,26.63
+454,DR Congo,COD,22.08
+455,Ecuador,ECU,27.42
+456,Egypt,EGY,29.81
+457,El Salvador,SLV,27.74
+458,Equatorial Guinea,GNQ,24.21
+459,Eritrea,ERI,20.75
+460,Estonia,EST,26.58
+461,Ethiopia,ETH,20.62
+462,Fiji,FJI,27.9
+463,Finland,FIN,26.11
+464,France,FRA,25.19
+465,French Polynesia,PYF,29.61
+466,Gabon,GAB,25.42
+467,Gambia,GMB,24.11
+468,Georgia,GEO,27.78
+469,Germany,DEU,26.75
+470,Ghana,GHA,23.99
+471,Greece,GRC,27.29
+472,Greenland,GRL,26.46
+473,Grenada,GRD,27.13
+474,Guatemala,GTM,26.66
+475,Guinea,GIN,22.98
+476,Guinea Bissau,GNB,23.51
+477,Guyana,GUY,26.57
+478,Haiti,HTI,25.49
+479,Honduras,HND,26.93
+480,Hungary,HUN,27.52
+481,Iceland,ISL,26.38
+482,India,IND,21.91
+483,Indonesia,IDN,23.25
+484,Iran,IRN,26.33
+485,Iraq,IRQ,28.95
+486,Ireland,IRL,27.65
+487,Israel,ISR,27.48
+488,Italy,ITA,25.75
+489,Jamaica,JAM,27.92
+490,Japan,JPN,22.75
+491,Jordan,JOR,29.3
+492,Kazakhstan,KAZ,26.58
+493,Kenya,KEN,23.41
+494,Kiribati,KIR,30.24
+495,Kuwait,KWT,29.93
+496,Kyrgyzstan,KGZ,26.79
+497,Lao PDR,LAO,23
+498,Latvia,LVA,26.82
+499,Lebanon,LBN,27.89
+500,Lesotho,LSO,24.97
+501,Liberia,LBR,24.19
+502,Libya,LBY,28.31
+503,Lithuania,LTU,26.64
+504,Luxembourg,LUX,26.5
+505,Macedonia (TFYR),MKD,26.94
+506,Madagascar,MDG,21.36
+507,Malawi,MWI,22.93
+508,Malaysia,MYS,25.85
+509,Maldives,MDV,25.7
+510,Mali,MLI,23.09
+511,Malta,MLT,27.28
+512,Marshall Islands,MHL,29.87
+513,Mauritania,MRT,25.06
+514,Mauritius,MUS,25.37
+515,Mexico,MEX,28.11
+516,Micronesia (Federated States of),FSM,29.94
+517,Moldova,MDA,27.18
+518,Mongolia,MNG,26.41
+519,Montenegro,MNE,26.74
+520,Morocco,MAR,26.13
+521,Mozambique,MOZ,22.78
+522,Myanmar,MMR,22.74
+523,Namibia,NAM,24.3
+524,Nauru,NRU,32.61
+525,Nepal,NPL,22.59
+526,Netherlands,NLD,25.7
+527,New Zealand,NZL,28.2
+528,Nicaragua,NIC,27.41
+529,Niger,NER,21.92
+530,Nigeria,NGA,23.34
+531,Niue,NIU,32.55
+532,North Korea,PRK,24.22
+533,Norway,NOR,26.85
+534,Occupied Palestinian Territory,PSE,29.13
+535,Oman,OMN,26.49
+536,Pakistan,PAK,24.11
+537,Palau,PLW,29.68
+538,Panama,PAN,27.09
+539,Papua New Guinea,PNG,25.7
+540,Paraguay,PRY,26.92
+541,Peru,PER,26.82
+542,Philippines,PHL,23.25
+543,Poland,POL,26.89
+544,Portugal,PRT,25.79
+545,Puerto Rico,PRI,28.57
+546,Qatar,QAT,29.66
+547,Romania,ROU,27.18
+548,Russian Federation,RUS,26.34
+549,Rwanda,RWA,22.02
+550,Saint Kitts and Nevis,KNA,29.63
+551,Saint Lucia,LCA,30.21
+552,Saint Vincent and the Grenadines,VCT,27.43
+553,Samoa,WSM,32.48
+554,Sao Tome and Principe,STP,24.87
+555,Saudi Arabia,SAU,28.82
+556,Senegal,SEN,23.02
+557,Serbia,SRB,26.26
+558,Seychelles,SYC,26.96
+559,Sierra Leone,SLE,22.75
+560,Singapore,SGP,23.77
+561,Slovakia,SVK,26.64
+562,Slovenia,SVN,26.76
+563,Solomon Islands,SLB,26.44
+564,Somalia,SOM,23.26
+565,South Africa,ZAF,27.35
+566,South Korea,KOR,23.81
+567,Spain,ESP,26.05
+568,Sri Lanka,LKA,23.24
+569,Sudan,SDN,24.71
+570,Suriname,SUR,26.71
+571,Swaziland,SWZ,26.91
+572,Sweden,SWE,26.16
+573,Switzerland,CHE,25.33
+574,Syrian Arab Republic,SYR,28.52
+575,Taiwan,TWN,24.45
+576,Tajikistan,TJK,26.25
+577,Tanzania,TZA,23.28
+578,Thailand,THA,24.56
+579,Timor-Leste,TLS,21.36
+580,Togo,TGO,23.62
+581,Tokelau,TKL,32.98
+582,Tonga,TON,32.37
+583,Trinidad and Tobago,TTO,27.83
+584,Tunisia,TUN,26.52
+585,Turkey,TUR,28.11
+586,Turkmenistan,TKM,26.74
+587,Tuvalu,TUV,31.05
+588,Uganda,UGA,22.48
+589,Ukraine,UKR,26.75
+590,United Arab Emirates,ARE,28.91
+591,United Kingdom,GBR,27.31
+592,United States of America,USA,29.04
+593,Uruguay,URY,27.54
+594,Uzbekistan,UZB,27.07
+595,Vanuatu,VUT,26.34
+596,Venezuela,VEN,26.82
+597,Viet Nam,VNM,21.96
+598,Yemen,YEM,23.96
+599,Zambia,ZMB,22.64
+600,Zimbabwe,ZWE,23.87
