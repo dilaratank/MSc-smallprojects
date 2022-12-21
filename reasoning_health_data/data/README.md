@@ -1,6 +1,6 @@
 # Meta-data
 
-## BMI dataset (heatmap_data_ISO.csv):
+## BMI dataset (ProcessedGlobalMeanBMI.csv):
 * region: Full country name, like “Afghanistan”
 * ISO: ISO 3166-1 alpha-3, a three-letter alphabetic code used to uniquely name and identify countries
 * mean BMI: Mean BMI for a country in the year 2016, averaged over men and women 
