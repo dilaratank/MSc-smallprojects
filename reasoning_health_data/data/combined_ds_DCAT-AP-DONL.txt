@@ -1,0 +1,43 @@
+<dcat:Dataset rdf:about="https://github.com/dilaratank/MSc-smallprojects/blob/main/reasoning_health_data/data/combined_ds.csv">
+  <dct:title>Combined Dataset</dct:title>
+  <dct:description>This dataset contains information about global Afib prevalence rate and mean BMI, and they are linked together via ISO country codes. It has been used to investigate the correlation between BMI scores and the Afib prevalence rate.</dct:description>
+  <dct:publisher rdf:resource="https://github.com/dilaratank"/>
+  <dct:issued>2022-12-19</dct:issued>
+  <dct:modified>2022-12-21</dct:modified>
+  <dct:language>en</dct:language>
+  <dcat:keyword>body mass index</dcat:keyword>
+  <dcat:keyword>atrial fibrillation</dcat:keyword>
+  <dcat:keyword>correlation</dcat:keyword>
+  <dcat:keyword>obesity</dcat:keyword>
+  <dcat:keyword>cardiovascular health</dcat:keyword>
+  <dcat:keyword>epidemiology</dcat:keyword>
+  <dcat:landingPage rdf:resource="https://docs.google.com/document/d/1dx9TdrI2fHxSRqrk0KK1Dq8u3oEcPs-K8dsUvD0MKSM/"/>
+  <dcat:distribution>
+    <dcat:Distribution>
+      <dct:format>text/csv</dct:format>
+      <dct:title>CSV Format</dct:title>
+      <dcat:accessURL>http://example.com/datasets/123/data.json</dcat:accessURL>
+      <dcat:downloadURL>https://github.com/dilaratank/MSc-smallprojects/blob/main/reasoning_health_data/data/combined_ds.csv</dcat:downloadURL>
+      <dcat:byteSize>9620</dcat:byteSize>
+      <dcat:checksum>
+        <dcat:Checksum>
+          <dcat:checksumAlgorithm>MD5</dcat:checksumAlgorithm>
+          <dcat:checksumValue>028ea7ad2a1bfeb6574a106a4cdfeda7</dcat:checksumValue>
+        </dcat:Checksum>
+      </dcat:checksum>
+      <dcat:conformsTo rdf:resource="http://www.snomed.org/snomed-ct"/>
+      <dcat:conformsTo rdf:resource="www.iso.org/iso/country_codes"/>
+      <dcat:describedBy rdf:resource="https://github.com/dilaratank/MSc-smallprojects/blob/main/reasoning_health_data/data/README.md"/>
+      <dcat:describedByType>dcat:documentation</dcat:describedByType>
+    </dcat:Distribution>
+  </dcat:distribution>
+  
+ <dcat:contactPoint>
+    <vcard:Contact>
+      <vcard:fn>Dilara Tank</vcard:fn>
+      <vcard:hasEmail rdf:resource="mailto:d.tank@amsterdamumc.nl."/>
+    </vcard:Contact>
+     </dcat:contactPoint>
+  <dct:provenance>This dataset was compiled from a variety of sources and has been quality checked by three students of the Medical Informatics master’s of the University of Amsterdam.</dct:provenance>
+  <dct:spatial>Worldwide</dct:spatial>
+
