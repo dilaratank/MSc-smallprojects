@@ -15,3 +15,6 @@ A collection of small projects from my Master's Medical Informatics (University 
 
 ### Reasoning with Health Data
 The goal of this project is to get familiar with FAIR's principles about data. In order to do this, we came up with a project that will explore two data sources to make a claim about the correlation between BMI and AFib prevalence worldwide.
+
+### Biomedical Information System Engineering
+PWA app: https://github.com/aespogom/NutriMobileApp
